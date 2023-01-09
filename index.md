@@ -1,3 +1,8 @@
+---
+title: HOME
+filename: index.md
+---
+
 #### G S Barath Arjun
 
 #### Portfolio
