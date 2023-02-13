@@ -1,13 +1,10 @@
 ---
-title: HOME
+title: BARATH ARJUN
+description: Portfolio blog
 filename: index.md
 ---
 
-#### G S Barath Arjun
-
-#### Portfolio
-
-##### Softwares
+##Links:
 
 * [Vimeo](https://vimeo.com/baratharjun)
 * [Maya Scripting](./maya_scripting.md)
