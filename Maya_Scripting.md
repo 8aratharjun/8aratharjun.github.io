@@ -1,7 +1,3 @@
----
-title: Maya Scripting
-filename: maya_scripting.md
----
 # MEL
 ### Control rig using selected edges
 
