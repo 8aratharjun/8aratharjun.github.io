@@ -1,4 +1,4 @@
-###Blender Sculpting
+### Blender Sculpting
 ![Appa - Avatar the airbenders](/images/blender_sculpting_renders/appaFinal1.png "Appa - Avatar the airbenders").
 ![Appa - Avatar the airbenders](/images/blender_sculpting_renders/appaFinal2.png "Appa - Avatar the airbenders").
 
