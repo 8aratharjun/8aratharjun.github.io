@@ -9,8 +9,5 @@ filename: index.md
 
 ##### Softwares
 
-* [Blender](./Blender.md)
-* [Houdini](./Houdini.md)
-* [Maya](./Maya.md)
-* [Maya Scripting](./Maya_Scripting.md)
-* [Unreal Engine](./Unreal_Engine.md)
+* [Vimeo](https://vimeo.com/baratharjun)
+* [Maya Scripting](./maya_scripting.md)
