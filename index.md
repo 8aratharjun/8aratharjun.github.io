@@ -4,7 +4,7 @@ description: Portfolio blog
 filename: index.md
 ---
 
-##Links:
+## My Works
 
 * [Vimeo](https://vimeo.com/baratharjun)
 * [Maya Scripting](./maya_scripting.md)
