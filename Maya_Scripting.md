@@ -2,10 +2,10 @@
 title: Maya Scripting
 filename: maya_scripting.md
 ---
-## nMEL
-# Control rig using selected edges
+# MEL
+### Control rig using selected edges
 
-'''
+```c++
 string $selection[] = `ls -sl -fl`;
 for ($i=0;$i<size($selection);$i++){
 	select -cl;
@@ -25,11 +25,11 @@ parent -r -s;
 select -r "polyToCurve*";
 select -d "polyToCurveShape*";
 doDelete;
-'''
+```
 
-# Motion path automation
+### Motion path automation
 
-'''
+```c++
 for( $i=1; $i<3; ++$i)
 {
     $objs = "s"+(string)$i;
@@ -39,11 +39,11 @@ for( $i=1; $i<3; ++$i)
     pathAnimation -fractionMode true -follow true -followAxis x -upAxis y -worldUpType "vector" -worldUpVector 0 1 0 -inverseUp false -inverseFront false -bank false -startTimeU `playbackOptions -query -minTime` -endTimeU  `playbackOptions -query -maxTime`;
     print($objs+" is parented");
 }
-'''
+```
 
-# Move object to other object's pivot
+### Move object to other object's pivot
 
-'''
+```c++
 string $selection[] = `ls -sl -fl`;
 $pivot_ref = $selection[0];
 $move_geo = $selection[1];
@@ -54,12 +54,12 @@ $x = $pivot_ref_pos[0];
 $y = $pivot_ref_pos[1];
 $z = $pivot_ref_pos[2];
 move -absolute $x $y $z $move_geo;
-'''
+```
 
-## Python
-# Add suffix for selection with incremental numbering
+# Python
+### Add suffix for selection with incremental numbering
 
-'''python
+```python
 import maya.cmds as cmds
 obj_names = cmds.ls(selection=True)
 suffix = input("Enter the suffix")
@@ -71,11 +71,11 @@ for i in range(len(obj_names)):
         cmds.rename(obj_names[i],obj_names[i]+suffix+"_"+str(i))
     else:
         cmds.rename(obj_names[i],obj_names[i]+suffix)
-'''
+```
 
-# Lowest point in mesh
+### Lowest point in mesh
 
-'''python
+```python
 import maya.cmds as cmds
 vtx_count = cmds.polyEvaluate(v=True) 
 obj_name = cmds.ls(selection=True)
@@ -91,10 +91,11 @@ for i in range(vtx_count):
 
 print("\n\n The least value of y is")
 print(min(y_pos))
-'''
-# Joint angle query
+```
 
-'''python
+### Joint angle query
+
+```python
 import maya.cmds as cmds
 obj_names = cmds.ls(selection=True)
 
@@ -104,11 +105,11 @@ for i in range(0,len(obj_names)):
     tempOrientation_y = cmds.joint(obj_names[i],q=True,ay=True)
     tempOrientation_z = cmds.joint(obj_names[i],q=True,az=True)
     print(str(tempOrientation_x)+" "+str(tempOrientation_y)+" "+str(tempOrientation_z))
-'''
+```
 
-# Maya distance between two points
+### Maya distance between two points
 
-'''python
+```python
 import maya.cmds as cmds
 import math
 obj_names = cmds.ls(selection=True)
@@ -116,7 +117,6 @@ def diffsquare(a,b):
     return (b-a)**2
 
 if(len(obj_names)==2):
-#MEASURE DIST
     point1 = cmds.pointPosition(obj_names[1])
     point2 = cmds.pointPosition(obj_names[0])
     
@@ -132,19 +132,16 @@ if(len(obj_names)==2):
     print(math.sqrt(diffsquare(x1,y1)+diffsquare(x2,y2)+diffsquare(x3,y3)))
 else:
     print("Select any two object and try again")
-'''
+```
 
-# Reset transformation shelf tool
+### Reset transformation shelf tool
 
-'''python
+``` python
 import maya.cmds as cmds
 obj_names = cmds.ls(selection=True)
 
 for object in obj_names:
-    #Absolute move to 000
     cmds.move(0,0,0,object,absolute=True)
-    #Absolute rotate to 000
     cmds.rotate(0,0,0,object,absolute=True)
-    #Absolute scale to 111
     cmds.scale(1,1,1,object,absolute=True)
-'''
+```
