@@ -136,7 +136,7 @@ else:
 
 ### Reset transformation shelf tool
 
-``` python
+```python
 import maya.cmds as cmds
 obj_names = cmds.ls(selection=True)
 
